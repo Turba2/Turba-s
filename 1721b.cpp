@@ -1,22 +1,32 @@
 #include <iostream>
-int main() {
-    int a = 0;
-    int n = 0;
-    int m = 0;
-    int sx = 0; 
-    int sy = 0;
-    int d = 0;
-    std::cin >> a;
-    for (int i = 0; i < a; i += 1) {
-        std::cin >> n >> m >> sx >> sy >> d;
-        if ((sy - d) > 1 && (sx + d) < n) {
-            std::cout << (n + m) - 2 << std::endl;
-        }
-        else if ((sy + d) < m && (sx - d) > 1) {
-            std::cout << (n + m) - 2 << std::endl;
-        }
-        else {
-            std::cout << "-1" << std::endl;
-        }
+void solve()
+{
+    int n, m, x, y, d;
+    std::cin >> n >> m >> x >> y >> d;
+    bool l = false, t = false, r = false, b = false;
+    if (x <= d + 1) {      
+        l = true;
     }
+    if (y <= d + 1) {          
+        t = true;
+    }
+    if (x + d >= n) {              
+        r = true;
+    }
+    if (y + d >= m) {                  
+        b = true;
+    }
+    if ((b || l) && (t || r)) {        
+        std::cout << -1 << std::endl;
+    }
+    else {                             
+        std::cout << n + m - 2 << std::endl;
+    }
+}
+
+int main() {
+    int t;
+    std::cin >> t;
+    for (int i = 0; i < t; i++) solve(); 
+    return 0;
 }
