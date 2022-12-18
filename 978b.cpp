@@ -8,7 +8,6 @@ int main()
     std::cin>>n;
     std::string slovo;
     std::cin>>slovo;
- 
     
     std::vector <int> dlyX(n,0);
     int c=1;
@@ -24,12 +23,6 @@ int main()
         }
  
     }
- // for (int i=0; i<dlyX.size();i++){
- //      if (dlyX[i]!=0 && dlyX[i]!=1) {
-// std::cout <<dlyX[i]<< ' ';
- //     }
-//  }
-    
     
     int ans=0;
     for (int i=0; i<dlyX.size(); i++)
